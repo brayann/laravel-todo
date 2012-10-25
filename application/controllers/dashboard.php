@@ -16,6 +16,14 @@ class Dashboard_Controller extends Controller {
 
 		$input = Input::all();
 
+		$v = new Validator($input, Todo::$rules);
+
+		if ($v->fails()) {
+
+			return Redirect::to('dashboard/new')->with_errors($v)->with_input();
+
+		}
+
 		$item = new Todo();
 		$item->descricao 	= $input['descricao'];
 		$data 				= new DateTime($input['data']);
@@ -37,7 +45,6 @@ class Dashboard_Controller extends Controller {
 		if ( !$item ) {
 
 			Session::flash('error', 'Todo não encontrado');
-
 
 		} else {
 
