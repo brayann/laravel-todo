@@ -17,8 +17,10 @@ class Dashboard_Controller extends Controller {
 		$input = Input::all();
 
 		$item = new Todo();
-		$item->fill($input);
-		$item->users_id = Auth::User()->id;
+		$item->descricao 	= $input['descricao'];
+		$data 				= new DateTime($input['data']);
+		$item->data 		= date_format($data, 'Y/m/d H:i:s');
+		$item->users_id 	= Auth::User()->id;
 
 		$item->save();
 
@@ -55,10 +57,9 @@ class Dashboard_Controller extends Controller {
 
 			Session::flash('error', 'Todo não encontrado');
 
-
 		} else {
 
-			$item->finalizado = date('Y/m/d hh:ii:ss');
+			$item->finalizado = date('Y/m/d H:i:s');
 			$item->save();
 
 		}

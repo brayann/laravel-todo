@@ -44,7 +44,7 @@
 					@foreach($itens as $item)
 						<tr>
 							<td>{{ $item->descricao }}</td>
-							<td>{{ $item->data }}</td>
+							<td>{{ date('d/m/Y H:i:s', strtotime($item->data)) }}</td>
 							<td>
 								@if (empty($item->finalizado))
 									<a href="{{ URL::to('dashboard/finalizar/' . $item->id) }}">
