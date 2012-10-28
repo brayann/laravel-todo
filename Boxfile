@@ -1,0 +1,19 @@
+global:
+  env:
+    - LARAVEL_ENV: production
+web1:
+  name: todolist
+  shared_writable_dirs:
+    - /storage/cache
+    - /storage/database
+    - /storage/logs
+    - /storage/sessions
+    - /storage/views
+  document_root: /public
+  php_version: 5.3.8
+  php_extensions:
+    - pdo_mysql
+    - mcrypt
+    - eaccelerator
+    - memcached
+    - curl
