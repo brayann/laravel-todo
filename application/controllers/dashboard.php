@@ -6,7 +6,7 @@ class Dashboard_Controller extends Controller {
 
 	public function get_index() {
 
-		$itens = Todo::where_users_id(Auth::User()->id)->get();
+		$itens = Todo::where_users_id(Auth::User()->id)->paginate(2);
 
 		return View::make('dashboard/list_todos')->with('itens', $itens);
 

@@ -41,7 +41,7 @@
 				</thead>
 
 				<tbody>
-					@foreach($itens as $item)
+					@foreach($itens->results as $item)
 						<tr>
 							<td>{{ $item->descricao }}</td>
 							<td>{{ date('d/m/Y H:i:s', strtotime($item->data)) }}</td>
@@ -61,6 +61,8 @@
 				</tbody>
 
 			</table>
+
+			{{ $itens->links() }}
 
 		@endif
 
