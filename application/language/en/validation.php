@@ -57,7 +57,7 @@ return array(
 	),
 	"not_in"         => "The selected :attribute is invalid.",
 	"numeric"        => "The :attribute must be a number.",
-	"required"       => "The :attribute field is required.",
+	"required"       => "O campo :attribute é obrigatório.",
 	"same"           => "The :attribute and :other must match.",
 	"size"           => array(
 		"numeric" => "The :attribute must be :size.",

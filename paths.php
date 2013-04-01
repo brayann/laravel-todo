@@ -24,6 +24,7 @@
 $environments = array(
 
 	'local' => array('http://localhost*', '*.dev'),
+	'en' => array('http://todolist.dev/en*'),
 
 );
 

@@ -96,7 +96,9 @@ Route::filter('pattern: dashboard*', 'auth');
 
 Route::filter('before', function()
 {
-	// Do stuff before every request to your application...
+    $language = $_SERVER['HTTP_ACCEPT_LANGUAGE'];
+	$language = substr($language, 0, 2);
+	Config::set('application.language', $language);
 });
 
 Route::filter('after', function($response)

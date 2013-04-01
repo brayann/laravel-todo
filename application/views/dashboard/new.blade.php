@@ -24,14 +24,14 @@
 			
 			{{ Form::open( URL::to('dashboard') ) }}
 
-				{{ Form::label('descricao', 'Descrição') }}
+				{{ Form::label('descricao', __('form.descricao') ) }}
 				{{ Form::text('descricao', Input::old('descricao')) }}
 
-				{{ Form::label('data', 'Data') }}
+				{{ Form::label('data', __('form.data')) }}
 				{{ Form::text('data', Input::old('data')) }}				
 
 				<p>
-					{{ Form::submit('Enviar') }}
+					{{ Form::submit(__('form.submit')) }}
 				</p>
 
 			{{ Form::close() }}
